@@ -32,9 +32,10 @@ const LogoutUser = () => {
               ></Image>
               <div className="text-xs">
                 <p className="block text-sm font-medium text-black">
-                  {username &&
-                    username.charAt(0).toUpperCase() +
-                      username.slice(1).toLowerCase()}
+                  {username
+                    ? username.charAt(0).toUpperCase() +
+                      username.slice(1).toLowerCase()
+                    : "Evano"}
                 </p>
                 <p className="text-[#757575]">Project Manager</p>
               </div>

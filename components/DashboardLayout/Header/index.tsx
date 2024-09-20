@@ -37,9 +37,10 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
         <div className="flex ">
           <h3 className="text-black font-semibold">
             Hello{" "}
-            {username &&
-              username.charAt(0).toUpperCase() +
-                username.slice(1).toLowerCase()}{" "}
+            {username
+              ? username.charAt(0).toUpperCase() +
+                username.slice(1).toLowerCase()
+              : "Evano"}{" "}
             👋🏼
           </h3>
         </div>

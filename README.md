@@ -42,7 +42,11 @@ yarn dev
 
 ## Live Project URL
 
-[Vercel] ()
+[Vercel] (https://crm-dashboard-gray.vercel.app)
+
+[LoginDetails]
+(username: emilys)
+(password: emilyspass)
 
 ## Frontend Figma Designs
 

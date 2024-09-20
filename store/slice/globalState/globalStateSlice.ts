@@ -16,7 +16,7 @@ const globalStateSlice = createSlice({
   reducers: {
     setGlobalState: (
       state: GlobalStateType,
-      action: PayloadAction<GlobalStatePayload>
+      action: PayloadAction<GlobalStatePayload>,
     ) => {
       const { dataKey, data } = action.payload;
       // eslint-disable-next-line no-param-reassign

@@ -56,8 +56,8 @@ const CustomerInfo = () => {
 
   return (
     <>
-      <div className=" mx-auto bg-white rounded-[20px] px-12 py-8 grid grid-cols-1 md:grid-cols-3 mb-8 gap-y-10 md:gap-y-0">
-        <div className="flex items-center gap-3">
+      <div className=" mx-auto bg-white rounded-[20px] px-12 py-8 grid grid-cols-1 md:grid-cols-3 mb-8 gap-y-10 md:gap-y-0 divide-x-0 divide-y md:divide-y-0 md:divide-x divide-[#E4E2F8] ">
+        <div className="flex items-center gap-3 ">
           <Image src={IconOne} alt="icon" width={60} loading="lazy"></Image>
           <div>
             <p className="text-xs text-[#ACACAC]">Total Users</p>
@@ -76,7 +76,7 @@ const CustomerInfo = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pl-0 md:pl-[20%] pt-[10%] md:pt-0">
           <Image src={IconTwo} alt="icon" width={60} loading="lazy"></Image>
           <div>
             <p className="text-xs text-[#ACACAC]">Members</p>
@@ -95,7 +95,7 @@ const CustomerInfo = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pl-0 md:pl-[20%] pt-[10%] md:pt-0">
           <Image src={IconThree} alt="icon" width={60} loading="lazy"></Image>
           <div>
             <p className="text-xs text-[#ACACAC]">Active Now</p>

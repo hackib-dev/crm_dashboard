@@ -27,7 +27,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   const storedSidebarExpanded = "true";
   const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === "true",
+    storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
   const [open, setOpen] = React.useState(false);

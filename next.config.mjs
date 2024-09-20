@@ -8,6 +8,10 @@ const nextConfig = {
 
     return config;
   },
+  reactStrictMode: true,
+  eslint: {
+    dirs: ["pages", "app", "components", "lib", "__tests__"],
+  },
 };
 
 export default nextConfig;

@@ -9,8 +9,15 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   rightIcon?: React.ReactNode;
 }
 
+// const Input = ({ ...props }) => {
+//   return <input value={value ?? ""} onChange={onChange} {...props} />;
+// };
+
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, leftIcon, rightIcon, type, ...props }, ref) => {
+  (
+    { className, leftIcon, rightIcon, type, value, onChange, ...props },
+    ref,
+  ) => {
     const [show, setShow] = React.useState(false);
     const handleClick = () => setShow(!show);
 
@@ -30,6 +37,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className,
           )}
           ref={ref}
+          value={value ?? ""}
+          onChange={onChange}
           {...props}
         />
         {type === "password" || rightIcon ? (

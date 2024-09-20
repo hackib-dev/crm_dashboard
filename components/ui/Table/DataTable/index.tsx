@@ -110,11 +110,10 @@ export function DataTable<TData, TValue>({
               className="p-2 border-none bg-[#F9FBFF] rounded-md text-xs"
             >
               <option value="newest" className="text-[#3D3C42] font-semibold">
-                <span className="text-[#7E7E7E] font-normal"> Sort by:</span>{" "}
-                Newest
+                Sort by: Newest
               </option>
               <option value="oldest" className="text-[#3D3C42] font-semibold">
-                <span> Sort by:</span> Oldest
+                Sort by: Oldest
               </option>
             </select>
           </div>

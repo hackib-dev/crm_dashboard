@@ -1,7 +1,6 @@
 "use client";
 
 import _ from "lodash";
-import axios from "../utils/axios";
 import Image from "next/image";
 import BgTop from "../../public/images/bgtop.png";
 import BgBottom from "../../public/images/bgbottom.png";
@@ -28,16 +27,20 @@ import { useRouter } from "next/navigation";
 import { useAppDispatch } from "@/store/hooks";
 import { useToast } from "@/hooks/use-toast";
 import { setUser } from "@/store/slice/userService/userService";
-import { API_AUTH_URL } from "../config";
 import { loginFormSchema } from "./validation";
 import { LoginFormData } from "@/types.ts";
 import { addMilliseconds } from "date-fns";
 import { jwtDecode } from "jwt-decode";
 import { setCookie } from "../utils/cookies";
+import { loginUser } from "../api/apiService";
 
 const LoginPage = () => {
   const form = useForm<LoginFormData>({
     resolver: zodResolver(loginFormSchema),
+    defaultValues: {
+      username: "",
+      password: "",
+    },
   });
 
   const router = useRouter();
@@ -45,9 +48,7 @@ const LoginPage = () => {
   const dispatch = useAppDispatch();
 
   const mutation = useMutation({
-    mutationFn: (data: LoginFormData) => {
-      return axios(API_AUTH_URL).post("/login", data);
-    },
+    mutationFn: (data: LoginFormData) => loginUser(data),
     onSuccess(data: any) {
       const {
         id,
@@ -142,7 +143,9 @@ const LoginPage = () => {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs">Email Id:</FormLabel>
+                  <FormLabel className="text-xs" aria-label="Email">
+                    Email Id:
+                  </FormLabel>
                   <FormControl>
                     <Input
                       className="text-xs"
@@ -167,7 +170,9 @@ const LoginPage = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs">Passwrod</FormLabel>
+                  <FormLabel className="text-xs" aria-label="Password">
+                    Password
+                  </FormLabel>
                   <FormControl>
                     <Input
                       className="text-xs"

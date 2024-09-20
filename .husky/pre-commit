@@ -18,13 +18,6 @@ yarn check-format ||
     false;
 )
 
-# Check ESLint standards
-yarn check-lint ||
-(
-    echo '🚨 Oops! Your code does not meet the ESLint standards.
-            ESLint Check Failed. Make the required changes mentioned above, add the changes, and try to commit again.'
-    false; 
-)
 
 # Check tsconfig standards
 yarn check-types ||

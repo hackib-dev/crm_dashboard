@@ -59,7 +59,7 @@ const LoginPage = () => {
         gender,
         image,
         clusterId,
-        token,
+        accessToken: token,
         refreshToken,
       } = data?.data || {};
 
@@ -85,7 +85,6 @@ const LoginPage = () => {
       const tokenExpiration = addMilliseconds(new Date(), ttl);
 
       setCookie("ttl", tokenExpiration.toISOString(), tokenExpiration);
-
       router.push("/dashboard");
 
       toast({

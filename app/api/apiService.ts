@@ -3,7 +3,9 @@ import { API_AUTH_URL } from "../config";
 import { LoginFormData } from "@/types.ts";
 
 export const loginUser = async (data: LoginFormData) => {
-  return axios(API_AUTH_URL).post("/login", data);
+  const response = await axios(API_AUTH_URL).post("/login", data);
+
+  return response;
 };
 
 export const fetchCustomerData = async () => {

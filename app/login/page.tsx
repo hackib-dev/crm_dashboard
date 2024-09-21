@@ -79,7 +79,7 @@ const LoginPage = () => {
           token,
           ttl,
           refreshToken,
-        }),
+        })
       );
 
       const tokenExpiration = addMilliseconds(new Date(), ttl);
@@ -223,8 +223,8 @@ const LoginPage = () => {
                 ></Image>
               </div>
               <Button
+                type="button"
                 className="w-full bg-white "
-                type="submit"
                 variant="outline"
                 size="lg"
               >

@@ -11,3 +11,5 @@ export const API_AUTH_URL = "/auth";
 export const API_PATH = process.env.NEXT_PUBLIC_API_PATH || "api";
 
 export const sessionStorageName = "crm_dashboard";
+
+export const DASHBOARD_ROUTE = ["/dashboard"];

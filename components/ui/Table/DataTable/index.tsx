@@ -45,11 +45,11 @@ export function DataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    [],
+    []
   );
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [searchInput, setSearchInput] = React.useState(""); // Search input state
-  const [sortOption, setSortOption] = React.useState("newest"); // Sorting option state
+  const [searchInput, setSearchInput] = React.useState("");
+  const [sortOption, setSortOption] = React.useState("newest");
 
   const table = useReactTable({
     data,
@@ -100,7 +100,7 @@ export function DataTable<TData, TValue>({
               placeholder="Search"
               value={searchInput}
               onChange={handleSearch}
-              className="border-none bg-[#F9FBFF] rounded-md p-2 placeholder:text-[#B5B7C0] placeholder:text-xs placeholder:pl-8"
+              className="border-none bg-[#F9FBFF] rounded-md p-2 placeholder:text-[#B5B7C0] placeholder:text-xs placeholder:pl-8 pl-10"
               leftIcon={<SearchIcon width={20} color="#7E7E7E" />}
             />
 
@@ -130,7 +130,7 @@ export function DataTable<TData, TValue>({
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext(),
+                            header.getContext()
                           )}
                     </TableHead>
                   );
@@ -159,7 +159,7 @@ export function DataTable<TData, TValue>({
                     <TableCell key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext(),
+                        cell.getContext()
                       )}
                     </TableCell>
                   ))}

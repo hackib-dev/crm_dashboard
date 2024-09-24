@@ -21,11 +21,6 @@ export function DataTableRowActions<TData>({
   children,
   column,
 }: DataTableRowActionsProps<TData>) {
-  //   const task = taskSchema.parse(row.original);
-
-  // const dan = column?.getFilterFn();
-  // dan?.(row, 'id', '12', () => true);
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -39,8 +34,6 @@ export function DataTableRowActions<TData>({
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
         {children}
-        {/* <DropdownMenuItem>Edit</DropdownMenuItem> */}
-        {/* <DropdownMenuSeparator /> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );

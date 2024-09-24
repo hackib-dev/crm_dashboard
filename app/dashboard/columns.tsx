@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { staffActionStatus } from "./constants"; // Ensure it has `value`, `label`, and `color`
+import { staffActionStatus } from "./constants";
 import { CustomerData } from "./types";
 
 export const columns: ColumnDef<CustomerData>[] = [
@@ -103,7 +103,7 @@ export const columns: ColumnDef<CustomerData>[] = [
       const statusValue = row.getValue("status");
 
       const status = staffActionStatus.find(
-        (s: any) => s.value === statusValue,
+        (s: any) => s.value === statusValue
       );
 
       if (!status) return <div>No Status</div>;

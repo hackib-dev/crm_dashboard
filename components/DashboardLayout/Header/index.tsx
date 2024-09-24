@@ -1,6 +1,7 @@
 import { Menu, SearchIcon, X } from "lucide-react";
 import { useAppSelector } from "@/store/hooks";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -12,11 +13,17 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
     user: { username },
   } = useAppSelector((state) => state.userService);
 
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchInput(value);
+  };
+
   return (
     <header className="sticky top-0 z-40 flex w-full bg-[#FAFBFF] ">
       <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
-          {/* <!-- Hamburger Toggle BTN --> */}
           <button
             type="button"
             aria-controls="sidebar"
@@ -49,7 +56,9 @@ const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen }) => {
           <Input
             type="text"
             placeholder="Search"
-            className="border-none bg-white rounded-md p-2 placeholder:text-[#B5B7C0] placeholder:text-xs placeholder:pl-8"
+            value={searchInput}
+            onChange={handleSearch}
+            className="border-none bg-[#F9FBFF] rounded-md p-2 placeholder:text-[#B5B7C0] placeholder:text-xs placeholder:pl-8 pl-10"
             leftIcon={<SearchIcon width={20} color="#7E7E7E" />}
           />
         </div>

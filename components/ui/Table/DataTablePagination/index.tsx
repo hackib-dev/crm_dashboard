@@ -12,7 +12,7 @@ export function DataTablePagination<TData>({
 }: DataTablePaginationProps<TData>) {
   const pageCount = table.getPageCount();
   const currentPage = table.getState().pagination.pageIndex + 1;
-  const pageSize = table.getState().pagination.pageSize; // Get page size
+  const pageSize = table.getState().pagination.pageSize;
   const totalRows = table.getFilteredRowModel().rows.length;
 
   const startRow = (currentPage - 1) * pageSize + 1;
